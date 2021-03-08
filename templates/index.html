@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Teacher Tool </title></head>
+    
+<body>
+	<h1>Fill in the Blanks Maker</h1>
+	<div>Add a new word to list:
+		<form action = "{{ url_for('add') }}" method = "POST">
+	<input type = 'text' name = 'inputword'>
+	<input type = 'submit'>
+</form>
+</div>
+<div>
+	<form action = "{{ url_for('blanks')}}" method = "POST">
+		<ul>
+			{% for word in words %}
+			<li>{{ word.text }}</li>
+			{% endfor %}
+		</ul>
+		<input type = 'submit'>
+	</form>
+</div>
+</body>
+
+
+
+</html>

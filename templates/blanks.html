@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Have fun filling in the blanks</title>
+</head>
+<body>
+<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" 
+         rel = "stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+		<script type="text/javascript" src="{{
+  url_for('static', filename='snippets.js') }}"></script>
+<div id = "fill_letters"></div>
+
+	<h1> Fill in the blanks</h1>
+	<ul>
+			{% for word in words %}
+			<li id={{word.text}}></li> 
+			<script type ="text/javascript">create_blank("{{word.text}}");</script>
+			
+  
+
+			{% endfor %}
+	</ul>
+
+
+  
+		
+</body>
+</html>
